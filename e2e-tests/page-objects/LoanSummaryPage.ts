@@ -162,7 +162,7 @@ export class LoanSummaryPage extends BasePage {
   /**
    * Verify summary after creating a single loan
    */
-  async verifyAfterCreatingLoan(amount: number): Promise<void> {
+  async verifyAfterCreatingLoan(): Promise<void> {
     await test.step('Verify summary after creating loan', async () => {
       await this.verifySummaryStats({
         total: 1,

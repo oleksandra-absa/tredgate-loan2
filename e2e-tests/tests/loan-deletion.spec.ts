@@ -1,6 +1,6 @@
 import { test } from '@playwright/test'
 import { AppPage } from '../page-objects/AppPage'
-import { TEXT, TEST_DATA } from '../texts/textLibrary'
+import { TEST_DATA } from '../texts/textLibrary'
 import { generateUniqueApplicantName } from '../helpers/testHelpers'
 
 test.describe('Loan Deletion', () => {

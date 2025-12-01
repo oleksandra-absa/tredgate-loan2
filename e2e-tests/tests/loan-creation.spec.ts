@@ -33,7 +33,7 @@ test.describe('Loan Creation Flow', () => {
     await app.loanList.verifyLoanDetails(applicantName, amount, term, rate, monthlyPayment)
 
     // Verify summary is updated
-    await app.loanSummary.verifyAfterCreatingLoan(amount)
+    await app.loanSummary.verifyAfterCreatingLoan()
 
     // Verify pending action buttons are visible
     await app.loanList.verifyPendingActionButtons(applicantName)

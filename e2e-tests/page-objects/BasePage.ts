@@ -64,7 +64,7 @@ export class BasePage {
    * Get a locator by role and name
    */
   getByRoleAndName(role: string, name: string | RegExp): Locator {
-    return this.page.getByRole(role as any, { name })
+    return this.page.getByRole(role as 'button' | 'link' | 'heading', { name })
   }
 
   /**

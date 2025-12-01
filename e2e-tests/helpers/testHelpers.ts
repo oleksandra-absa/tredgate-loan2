@@ -1,3 +1,5 @@
+import type { Page } from '@playwright/test'
+
 /**
  * Helper utilities for E2E tests
  * Contains reusable functions and utilities
@@ -60,7 +62,7 @@ export async function wait(ms: number): Promise<void> {
  * Clear localStorage via browser context
  * Useful for test isolation
  */
-export async function clearLocalStorage(page: any): Promise<void> {
+export async function clearLocalStorage(page: Page): Promise<void> {
   await page.evaluate(() => {
     localStorage.clear()
   })
@@ -69,7 +71,7 @@ export async function clearLocalStorage(page: any): Promise<void> {
 /**
  * Get loan data from localStorage
  */
-export async function getLoansFromStorage(page: any): Promise<any[]> {
+export async function getLoansFromStorage(page: Page): Promise<unknown[]> {
   return await page.evaluate(() => {
     const stored = localStorage.getItem('tredgate_loans')
     return stored ? JSON.parse(stored) : []
@@ -79,7 +81,7 @@ export async function getLoansFromStorage(page: any): Promise<any[]> {
 /**
  * Set loan data in localStorage
  */
-export async function setLoansInStorage(page: any, loans: any[]): Promise<void> {
+export async function setLoansInStorage(page: Page, loans: unknown[]): Promise<void> {
   await page.evaluate((loansData) => {
     localStorage.setItem('tredgate_loans', JSON.stringify(loansData))
   }, loans)
