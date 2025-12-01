@@ -10,6 +10,19 @@ export default defineConfig({
       '**/node_modules/**',
       '**/dist/**',
       'tests/failing_heal.spec.ts'
-    ]
+    ],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'json-summary'],
+      reportsDirectory: './coverage',
+      exclude: [
+        'node_modules/**',
+        'dist/**',
+        '**/*.config.{js,ts}',
+        '**/main.ts',
+        'tests/**'
+      ]
+    },
+    reporters: ['default', 'html']
   }
 })

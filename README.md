@@ -52,9 +52,27 @@ npm run build
 
 ### Testing
 
+Run all tests:
 ```bash
 npm run test
 ```
+
+Run tests in watch mode:
+```bash
+npm run test:watch
+```
+
+Run tests with coverage:
+```bash
+npm run test:coverage
+```
+
+Open interactive test UI:
+```bash
+npm run test:ui
+```
+
+For detailed testing information, see [TESTING.md](TESTING.md).
 
 ### Linting
 
