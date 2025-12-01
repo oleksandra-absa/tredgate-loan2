@@ -26,7 +26,13 @@ export function formatPercent(value: number): string {
 
 /**
  * Calculate monthly payment based on loan details
- * Uses the same formula as the application
+ * 
+ * NOTE: This uses a simplified formula matching the application's implementation:
+ * total = amount * (1 + interestRate), monthly = total / termMonths
+ * 
+ * This is NOT a real-world loan amortization calculation (which would use compound 
+ * interest and proper amortization schedules). It's intentionally simplified for 
+ * demonstration purposes and matches exactly what the application calculates.
  */
 export function calculateMonthlyPayment(amount: number, termMonths: number, interestRate: number): number {
   const total = amount * (1 + interestRate)

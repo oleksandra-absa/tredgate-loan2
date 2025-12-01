@@ -27,8 +27,12 @@ export class LoanListPage extends BasePage {
 
   /**
    * Get a specific loan row by applicant name
-   * Note: This is not perfectly stable as names could duplicate
-   * TODO: Add data-testid to rows for better stability
+   * 
+   * WARNING: This locator is not perfectly stable as names could duplicate in production.
+   * This is acceptable for testing with unique generated names.
+   * 
+   * RECOMMENDED IMPROVEMENT: Add data-testid="loan-row-{id}" to table rows in LoanList.vue
+   * for more stable element selection independent of content.
    */
   getLoanRowByApplicant(applicantName: string): Locator {
     return this.page.locator(`tbody tr:has-text("${applicantName}")`)
