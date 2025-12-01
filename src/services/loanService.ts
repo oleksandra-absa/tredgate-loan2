@@ -124,7 +124,6 @@ export function autoDecideLoan(id: string): void {
 export function deleteLoan(id: string): void {
   const loans = getLoans()
   const loanIndex = loans.findIndex(loan => loan.id === id)
-  
   if (loanIndex === -1) {
     throw new Error(`Loan with id ${id} not found`)
   }
