@@ -116,3 +116,18 @@ export function autoDecideLoan(id: string): void {
 
   saveLoans(loans)
 }
+
+/**
+ * Delete a loan by ID
+ * Removes the loan from the array and updates localStorage
+ */
+export function deleteLoan(id: string): void {
+  const loans = getLoans()
+  const loanIndex = loans.findIndex(loan => loan.id === id)
+  if (loanIndex === -1) {
+    throw new Error(`Loan with id ${id} not found`)
+  }
+
+  loans.splice(loanIndex, 1)
+  saveLoans(loans)
+}
